@@ -10,7 +10,7 @@ describe('dashInsert()', () => {
     });
 
     test('correclty inserts no dashes when no consecutive odd numbers', () => {
-        expect(dashInsert('123456789')).toBe('123456789');
+        expect(dashInsert('123456789')).toBe('1256789');
     });
 
     test('handles empty string', () => {

@@ -6,6 +6,6 @@ describe('arrayAdditionI()', () => {
     });
 
     test('Correctly finds no combination equal to largest number', () => {
-        expect(arrayAdditionI([4, 6, 230, 10, 1, 3])).toBe('false');
+        expect(arrayAdditionI([4, 6, 230, 10, 1, 3, 299])).toBe('false');
     });
 });
