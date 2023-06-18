@@ -33,25 +33,26 @@
 def snail(snail_map):
     len_ref= len(snail_map)
     snail_array =[]
+    if len(snail_map[0])==0:
+        return []
     n =1
     while n <= len_ref:
         if n%2 == 1:
             part_1=  [snail_map[0][i] for i in range(len(snail_map))]
             part_2 = [snail_map[i][len(snail_map)-1] for i in range(1,len(snail_map))]
-            
+            snail_map=[row[:len(snail_map)-1] for row in snail_map ]
+            del snail_map [0]
         else:
-            part_1 = []
-        
-    
-    
-    
-    
-        
-    return part_1,part_2
+            part_1=  [snail_map[len(snail_map)-1][i] for i in range(len(snail_map)-1,-1,-1)]
+            part_2 = [snail_map[i][0] for i in range(len(snail_map)-2,-1,-1)]
+            snail_map=[row[1:len(snail_map)] for row in snail_map ]
+            del snail_map [len(snail_map)-1]
 
-
-print (snail([[1,2,3],
-         [8,9,4],
-         [7,6,5]]))
+        
+        snail_array += part_1 + part_2
+        n+=1
+    
+    
+    return snail_array
 
 
